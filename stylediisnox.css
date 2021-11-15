@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+/* card */
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container .card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out ;
+
+}
+.container .card:hover:before{
+    clip-path: circle(300px at 80% -20%);
+}
+
+.container .card::after{
+    content: 'Diisnox';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.1);
+  
+
+}
+.container .card .image{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+   transform: translateY(-50%);
+   z-index: 10000;
+   width: 100%;
+   height: 220px;
+   transition: 0.5s;
+}
+
+.container .card:hover .image {
+  top:0%;
+  transform: translateY(0%);
+}
+
+.container .card .image img{
+   
+   
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+}
+
+.container .card .contentbx{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+
+
+}
+.container .card .contentbx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+
+}
+
+.container .card .contentbx .size{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.container .card:hover .contentbx .size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card .contentbx .size h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .contentbx .size span{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0.5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.container .card .contentbx .size .fab{
+    color: black;
+}
+
+iframe{
+    width: 100%;
+    margin-top: 55px;
+    border-radius: 5px;
+    
+}
+
+.container .card .contentbx .size span:hover{
+    background: #232323;
+}
+
+.container .card:hover .contentbx{
+    height: 210px;
+
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    overflow:hidden ;
+    background: #111;
+
+}
+
+.text{
+    position: relative;
+    /* skewy est une distortion verticale */
+    transform: skewY(345deg) translateY(-200px);
+    animation: animateColor 5s linear infinite;
+}
+
+/* l'animation */
+@keyframes animateColor{
+    0%{
+        filter: hue-rotate(0deg);
+
+    }
+    100%{
+        filter: hue-rotate(360deg);
+        
+    }
+}
+.text h2{
+    position: relative;
+    width: 100%;
+    font-size: 8em;
+    color: #fff;
+    pointer-events: none;
+    line-height: 1em;
+    white-space: nowrap;
+    text-shadow: calc(var(--x)) 100px 0 rgba(255, 255, 255, 0.1);
+    transform: translateX(calc(0% - var(--x) * var(--i)));
+}
+/* x et i sont des variables */
+
+.text h2 span{
+    color: rgb(126, 0, 126);
+    margin: 0 10px;
+    
+}
+
+.text h2 span:nth-child(even){
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    
+}
+.Card{
+    position: absolute;
+    z-index: 100;
+}
+.textus{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 100px;
+    top: 300px;
+    z-index: 100;
+}
+
